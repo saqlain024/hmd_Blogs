@@ -17,7 +17,7 @@ const StyledButton = styled.button`
   ${(props) => 
     props.primary && 
     css`
-      border: 3px solid yellow;
+      border: 6px solid ${props.bgColor};
     `
   };
 
@@ -64,7 +64,7 @@ function CreatePost() {
           {/*value={content} onChange={(e) => setContent(e.target.value)} */}
         </div>
 
-        <StyledButton primary >Create Post</StyledButton>
+        <StyledButton primary bgColor="yellow">Create Post</StyledButton>
         {/* <StyledButton>Create Post</StyledButton> */}
 
       </form>
