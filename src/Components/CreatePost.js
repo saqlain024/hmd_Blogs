@@ -1,8 +1,27 @@
 import React, { useState } from 'react';
 import { firestore } from '../firebaseConfig';
 import { useFormInput } from './hooks';
+import { styled, css } from 'styled-components';
+// import classes from "./Button.module.css";
 
-import classes from "./Button.module.css";
+const StyledButton = styled.button`
+  height: 33px;
+  background: ${(props) => (props.primary ? '#4caf50' : 'blue')};
+  border: 0;
+  color: #fff;
+  padding: 8px;
+  font-size: 15px;
+  border-radius: 3px;
+  cursor: pointer;
+
+  ${(props) => 
+    props.primary && 
+    css`
+      border: 3px solid yellow;
+    `
+  };
+
+`;
 
 function CreatePost() {
   const title = useFormInput('');
@@ -41,11 +60,13 @@ function CreatePost() {
 
         <div className="form-field">
           <label>Content</label>
-          <textarea {...content}></textarea>{' '}
+          <textarea {...content}></textarea>
           {/*value={content} onChange={(e) => setContent(e.target.value)} */}
         </div>
 
-        <button className={classes.createPostBtn }>Create Post</button>
+        <StyledButton primary >Create Post</StyledButton>
+        {/* <StyledButton>Create Post</StyledButton> */}
+
       </form>
     </div>
   );
