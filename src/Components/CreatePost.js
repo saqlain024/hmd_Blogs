@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { firestore } from '../firebaseConfig';
 import { useFormInput } from './hooks';
 
+import classes from "./Button.module.css";
+
 function CreatePost() {
   const title = useFormInput('');
   const subTitle = useFormInput('');
@@ -43,7 +45,7 @@ function CreatePost() {
           {/*value={content} onChange={(e) => setContent(e.target.value)} */}
         </div>
 
-        <button className="create-post-btn">Create Post</button>
+        <button className={classes.createPostBtn }>Create Post</button>
       </form>
     </div>
   );

@@ -21,7 +21,6 @@ import Home from './Home';
 import Navbar from './Navbar';
 import CreatePost from './CreatePost';
 import PostDetail from './PostDetail';
-import Index from '../index.css';
 // import { Navbar, PostDetail, Home, CreatePost } from './';
 
 function App() {
@@ -30,8 +29,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/post/:postId" element={<PostDetail />} />
-        <Route path="/create-post" element={<CreatePost />} />
+        <Route path="/post/:postId" element={<PostDetail/>} />
+        <Route path="/create-post" element={<CreatePost/>} />
       </Routes>
     </div>
   );
