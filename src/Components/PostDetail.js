@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { firestore } from '../firebaseConfig';
 import { useParams } from 'react-router-dom';
+import Radium from 'radium';
 
 function PostDetail() {
   const [posts, setPosts] = useState([]);
@@ -19,10 +20,20 @@ function PostDetail() {
 
   return (
     <div className="post-detail">
-      <h1>{posts.title}</h1>
+      <h1 style={styles.heading}>{posts.title}</h1>
       <p>{posts.content}</p>
     </div>
   );
 }
 
-export default PostDetail;
+export default Radium(PostDetail);
+
+const styles = {
+  heading: {
+    textAlign: 'center',
+    
+    ':hover' : {
+       color: 'red',      // radium not working in latest react better not doing it
+    },
+  },
+};
